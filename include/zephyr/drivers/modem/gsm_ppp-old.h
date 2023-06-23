@@ -18,8 +18,6 @@ extern "C" {
 #define GSM_PPP_MDM_IMSI_LENGTH          16
 #define GSM_PPP_MDM_ICCID_LENGTH         32
 
-#define GSM_PPP_MDM_LOCALTIME_LENGTH	 34
-
 struct gsm_ppp_modem_info {
 	char mdm_manufacturer[GSM_PPP_MDM_MANUFACTURER_LENGTH];
 	char mdm_model[GSM_PPP_MDM_MODEL_LENGTH];
@@ -30,8 +28,6 @@ struct gsm_ppp_modem_info {
 	char mdm_iccid[GSM_PPP_MDM_ICCID_LENGTH];
 #endif
 	int  mdm_rssi;
-
-	char mdm_localtime[GSM_PPP_MDM_LOCALTIME_LENGTH];
 };
 
 /** @cond INTERNAL_HIDDEN */
@@ -65,9 +61,6 @@ void gsm_ppp_register_modem_power_callback(const struct device *dev,
  * @retval struct gsm_ppp_modem_info * pointer to modem information structure.
  */
 const struct gsm_ppp_modem_info *gsm_ppp_modem_info(const struct device *dev);
-
-//int gsm_query_local_time(const struct device *dev);
-
 
 #ifdef __cplusplus
 }
